@@ -1,0 +1,29 @@
+/* Ichika Hoshino */
+
+.ichika h1,
+h2 {
+    color: #3ae;
+}
+
+.ichika .song::after {
+    background: #34aaefcc;
+    color: #0c0c0c;
+}
+
+.ichika-hoshino .text-style {
+    color: #3ae;
+}
+
+.ichika-hoshino .song-modal__infoheader, .seevideo {
+    background: linear-gradient(170deg,#33aaee, #34aaefa0);
+    color: #0c0c0c;
+}
+
+.ichika-hoshino .song-modal__content {
+    scrollbar-color: #3ae #0c0c10;
+    scrollbar-width: thin;
+}
+
+.ichika-hoshino .song-modal__content::-webkit-scrollbar-thumb {
+    background: #3ae;
+}
