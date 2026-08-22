@@ -11,7 +11,10 @@ export function replayEntranceAnimations() {
         element.style.removeProperty('--entrance-delay');
     });
 
-    const visibleElements = pageElements.filter((element) => !element.hidden && element.style.display !== 'none');
+    const visibleElements = pageElements.filter((element) => {
+        if (element.hidden || element.style.display === 'none') return false;
+        return !element.parentElement?.closest('[hidden], [style*="display: none"]');
+    });
 
     let songIndex = 0;
 

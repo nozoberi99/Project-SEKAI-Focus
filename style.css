@@ -5,6 +5,7 @@
     --text: #f6f6f6;
     --line-color: #414141;
     --font: "Dongle", sans-serif;
+    --font-titles: "New Amsterdam", sans-serif;
     --fade: all 0.2s ease-in-out;
 }
 
@@ -30,7 +31,7 @@ body {
 }
 
 h1 {
-    font-family: "Anton SC", sans-serif;
+    font-family: var(--font-titles);
     letter-spacing: 0.02em;
     text-align: center;
     font-size: 100px;
@@ -69,19 +70,8 @@ h1 {
     display: none;
 }
 
-.sort-header {
-    flex-basis: 100%;
-    width: 100%;
-    margin: 20px 0 8px;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--line-color);
-    color: var(--text);
-    font-size: 2rem;
-    text-align: left;
-}
-
 .song:hover {
-    filter: brightness(1.2);
+    background-color: #000;
 }
 
 .song::after {
@@ -178,7 +168,7 @@ h1 {
     display: flex;
     object-fit: cover;
     position: absolute;
-    gap: 299px;
+    gap: 20px;
 }
 
 .song-modal__cover {
@@ -204,8 +194,10 @@ h1 {
 
 .song-modal h2 {
     font-size: clamp(2.5rem, 7vw, 5rem);
-    line-height: 0.63;
     margin-bottom: 10px;
+    line-height: 0.8;
+    font-family: var(--font-titles);
+    letter-spacing: 0.03em;
 }
 
 .modal-song-title {

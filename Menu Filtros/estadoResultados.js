@@ -12,11 +12,9 @@ function getSelectedSectionIds() {
 
 function isSectionAllowedByFranchise(group) {
     const selectedSectionIds = getSelectedSectionIds();
-    if (selectedSectionIds.length === 0) {
-        return true;
-    }
-
-    return selectedSectionIds.some((sectionId) => group?.classList.contains(sectionId));
+    return selectedSectionIds.length === 0
+        || Array.from(group?.querySelectorAll('.song') || [])
+            .some((card) => card.dataset.franchiseMatch !== 'false');
 }
 
 function isVisibleCard(card) {

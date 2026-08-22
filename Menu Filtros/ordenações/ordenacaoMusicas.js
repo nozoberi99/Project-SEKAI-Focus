@@ -4,12 +4,12 @@ import { agruparPorUnit } from './ordenacaoUnit.js';
 import { agruparPorVirtualSinger } from './ordenacaoVirtualSinger.js';
 import { agruparPorRoll } from './ordenacaoRoll.js';
 import { agruparPorLancamento } from './ordenacaoLancamento.js';
+import { replayEntranceAnimations } from '../animacoesEntrada.js';
 
 const select = document.getElementById('sort-select');
 const menu = document.getElementById('sort-menu');
 const descendingCheckbox = document.getElementById('sort-descending');
-const originalGroup = document.querySelector('.character-focus');
-const originalList = originalGroup?.querySelector('.focus-songs');
+const originalGroups = Array.from(document.querySelectorAll('.character-focus'));
 const groupHeaderTitles = {
     unit: 'Unit',
     vs: 'Virtual Singer',
@@ -39,9 +39,10 @@ const rollTitles = {
 const items = Array.from(document.querySelectorAll('.song')).map((element, index) => ({
     element,
     originalIndex: index,
-    personagem: originalGroup?.querySelector('.character-name')?.textContent.trim() || '',
+    originalList: element.closest('.character-focus')?.querySelector('.focus-songs'),
+    personagem: element.closest('.character-focus')?.querySelector('.character-name')?.textContent.trim() || '',
     nome: element.dataset.tooltip?.trim() || '',
-    unit: originalGroup?.dataset.unit || '',
+    unit: element.closest('.character-focus')?.dataset.unit || '',
     virtualSinger: element.dataset.vs?.trim() || '',
     roll: element.dataset.roll?.trim() || '',
     lancamento: element.dataset.release?.trim() || ''
@@ -56,7 +57,7 @@ items.forEach(({ element, unit, personagem }) => {
 const globalList = document.createElement('ul');
 globalList.className = 'focus-songs sorted-songs';
 globalList.hidden = true;
-originalGroup?.after(globalList);
+originalGroups.at(-1)?.after(globalList);
 
 function dataSort(a, b) {
     const first = Date.parse(a.lancamento.split('-').reverse().join('-')) || 0;
@@ -85,14 +86,25 @@ export function render() {
     const descending = descendingCheckbox?.checked;
     const ordered = value === 'name' ? ordenarPorNome(items) : ordenarPorPersonagem(items).sort(dataSort);
 
-    originalList.hidden = value !== 'default';
-    originalGroup.hidden = value !== 'default';
+    originalGroups.forEach((group) => {
+        if (value !== 'default') group.hidden = true;
+        group.querySelectorAll('.character-name').forEach((title) => {
+            title.hidden = value !== 'default';
+        });
+    });
     globalList.hidden = value === 'default';
     globalList.replaceChildren();
 
     if (value === 'default') {
         const defaultItems = descending ? ordered.slice().reverse() : ordered;
-        defaultItems.forEach((item) => originalList.append(item.element));
+        defaultItems.forEach((item) => item.originalList?.append(item.element));
+        originalGroups.forEach((group) => {
+            const hasVisibleCard = Array.from(group.querySelectorAll('.song'))
+                .some((song) => !song.hidden && song.style.display !== 'none');
+            group.hidden = !hasVisibleCard;
+            group.style.display = group.hidden ? 'none' : '';
+        });
+        replayEntranceAnimations();
         return;
     }
 
@@ -108,6 +120,7 @@ export function render() {
         const nameItems = descending ? visibleItems.slice().reverse() : visibleItems;
         nameItems.forEach((item) => globalList.append(item.element));
         hiddenItems.forEach((item) => globalList.append(item.element));
+        replayEntranceAnimations();
         return;
     }
 
@@ -120,6 +133,8 @@ export function render() {
     groups.forEach((group, label) => {
         const displayLabel = value === 'roll'
             ? rollTitles[label] || label
+            : value === 'vs'
+                ? virtualSingerTitles[label] || label
             : value === 'release'
                 ? `Ano ${label}`
                 : label;
@@ -128,6 +143,7 @@ export function render() {
     });
 
     hiddenItems.forEach((item) => globalList.append(item.element));
+    replayEntranceAnimations();
 }
 
 menu?.querySelectorAll('.sort-option').forEach((option) => {

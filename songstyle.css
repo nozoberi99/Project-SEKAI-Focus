@@ -94,3 +94,110 @@
 .saki-tenma .song-modal__content::-webkit-scrollbar-thumb {
     background: #fd4;
 }
+
+/* Honami Mochizuki */
+
+#honami,
+.honami-mochizuki h2,
+.honami-mochizuki .text-style {
+    color: #e66;
+}
+
+#honami::after {
+    background:
+        linear-gradient(170deg,
+            rgb(238 102 102 / var(--song-gradient-opacity)),
+            rgb(225 64 64 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#honami:hover::after,
+.honami-mochizuki .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+}
+
+.honami-mochizuki .song-modal__infoheader,
+.honami-mochizuki .seevideo {
+    background: linear-gradient(170deg, rgb(238, 102, 102), rgb(225, 64, 64));
+}
+
+.honami-mochizuki .song-modal__content {
+    scrollbar-color: #e66 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.honami-mochizuki .song-modal__content::-webkit-scrollbar-thumb {
+    background: #e66;
+}
+
+/* Shiho Hinomori */
+
+#shiho,
+.shiho-hinomori h2,
+.shiho-hinomori .text-style {
+    color: #bbde22;
+}
+
+#shiho::after {
+    background:
+        linear-gradient(170deg,
+            rgb(187 222 34 / var(--song-gradient-opacity)),
+            rgb(177 216 2 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#shiho:hover::after,
+.shiho-hinomori .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.shiho-hinomori .song-modal__infoheader,
+.shiho-hinomori .seevideo {
+    background: linear-gradient(170deg, rgb(187, 222, 34), rgb(177, 216, 2));
+}
+
+.shiho-hinomori .song-modal__content {
+    scrollbar-color: #bbde22 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.shiho-hinomori .song-modal__content::-webkit-scrollbar-thumb {
+    background: #bbde22;
+}
+
+/* Minori Hanasato */
+
+#minori,
+.minori-hanasato h2,
+.minori-hanasato .text-style {
+    color: #ffcdac;
+}
+
+#minori::after {
+    background:
+        linear-gradient(170deg,
+            rgb(255 205 172 / var(--song-gradient-opacity)),
+            rgb(255 175 122 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#minori:hover::after,
+.minori-hanasato .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.minori-hanasato .song-modal__infoheader,
+.minori-hanasato .seevideo {
+    background: linear-gradient(170deg, #ffcdac, #ffaf7a);
+}
+
+.minori-hanasato .song-modal__content {
+    scrollbar-color: #ffcdac #0c0c10;
+    scrollbar-width: thin;
+}
+
+.minori-hanasato .song-modal__content::-webkit-scrollbar-thumb {
+    background: #ffcdac;
+}
