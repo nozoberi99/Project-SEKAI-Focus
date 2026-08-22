@@ -9,6 +9,11 @@ const ordinalNumbers = [
   'primeira', 'segunda', 'terceira', 'quarta', 'quinta', 'sexta', 'sétima', 'oitava', 'nona', 'décima',
 ];
 
+const monthNames = [
+  'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+  'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro',
+];
+
 function getOrdinal(number) {
   const numericValue = Number.parseInt(number, 10);
   if (!numericValue) {
@@ -18,11 +23,23 @@ function getOrdinal(number) {
   return ordinalNumbers[numericValue - 1] || `${numericValue}ª`;
 }
 
+function formatReleaseDate(date) {
+  const match = date.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+  if (!match) {
+    return date;
+  }
+
+  const [, day, month, year] = match;
+  return `${day} de ${monthNames[Number(month) - 1] || month} de ${year}`;
+}
+
 function updateSongDetails(song) {
   const rows = document.querySelectorAll('.song-modal__infoline');
 
   rows.forEach((row, index) => {
-    const value = song.dataset[songDetailAttributes[index]]?.trim() || '';
+    const attribute = songDetailAttributes[index];
+    const rawValue = song.dataset[attribute]?.trim() || '';
+    const value = attribute === 'release' ? formatReleaseDate(rawValue) : rawValue;
     const cell = row.querySelector('.song-modal__infodata');
 
     cell.textContent = value;
@@ -64,7 +81,7 @@ function updateSongDescription(song) {
     'modal-song-description-roll': getOrdinal(data.roll),
     'modal-song-description-character': characterHeading?.textContent.trim() || '',
     'modal-song-description-event': data.event || '',
-    'modal-song-description-release': data.release || '',
+    'modal-song-description-release': formatReleaseDate(data.release?.trim() || ''),
   };
 
   Object.entries(values).forEach(([id, value]) => {
