@@ -1,6 +1,9 @@
 :root {
     --bg: linear-gradient(#030308, #0c0c10);
+    --bg2: linear-gradient(170deg, #030308, #0c0c10);
+    --base-color: #030308;
     --text: #f6f6f6;
+    --line-color: #414141;
     --font: "Dongle", sans-serif;
     --fade: all 0.2s ease-in-out;
 }
@@ -8,6 +11,9 @@
 body {
     background: var(--bg);
     color: var(--text);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 420px;
     font-family: var(--font);
     display: block;
     margin: auto;
@@ -37,59 +43,70 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     gap: 3px;
     list-style: none;
-    padding: 0 50px;
+    padding: 0 20px;
     margin: 0px 50px;
 }
 
 .song {
     position: relative;
-    display: inline-block;
-    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     cursor: pointer;
+    transition: var(--fade);
+    border-radius: 5px;
+    height: 250px;
+    width: 141px;
+    border: solid 1px var(--line-color);
+}
+
+.song[hidden] {
+    display: none;
+}
+
+.sort-header {
+    flex-basis: 100%;
+    width: 100%;
+    margin: 20px 0 8px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line-color);
+    color: var(--text);
+    font-size: 2rem;
+    text-align: left;
+}
+
+.song:hover {
+    filter: brightness(1.2);
 }
 
 .song::after {
     content: attr(data-tooltip);
     position: absolute;
-    left: 50%;
-    bottom: 10px;
-    transform: translateX(-50%) translateY(6px);
-    background: var(--bg);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg2);
     color: var(--text);
-    padding: 6px 10px;
-    border-radius: 6px;
+    border-top: solid 1px var(--line-color);
+    text-align: center;
     font-size: 1.2rem;
-    line-height: 1;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 9;
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-}
-
-.song:hover::after {
-    opacity: 1;
-    visibility: visible;
+    line-height: 0.63;
+    padding: 10px 0px 8px 0;
+    --song-gradient-opacity: 0;
+    transition: --song-gradient-opacity 0.2s ease-in-out, var(--fade);
 }
 
 .song img {
     display: block;
-    aspect-ratio: 9 / 16;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    height: 250px;
-    z-index: -10;
-    border-radius: 5px;
-    transition: var(--fade);
-}
-
-.song img:hover {
-    height: 270px;
-    z-index: 9;
-    filter: brightness(1.2);
 }
 
 .song:focus-visible {
@@ -99,6 +116,23 @@ h1 {
 
 .song-modal[hidden] {
     display: none;
+}
+
+.results-enter {
+    animation: results-enter var(--entrance-duration, 250ms) ease-out both;
+    animation-delay: var(--entrance-delay, 0ms);
+}
+
+@keyframes results-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* modal */
@@ -127,7 +161,7 @@ h1 {
     overflow-x: hidden;
     overflow-y: auto;
     background: var(--bg);
-    border: 1px solid #ffffff40;
+    border: 1px solid var(--line-color);
     border-radius: 5px;
     box-shadow: 0 18px 60px #000;
     animation: modal-enter 0.2s ease-out;
@@ -178,13 +212,13 @@ h1 {
     font-size: 60px;
     line-height: 0.63;
     margin: 30px 0px 7px 0px;
-    border-bottom: solid 1px #ffffff40;
+    border-bottom: solid 1px var(--line-color);
 }
 
 /* infotable */
 
 .song-modal__infotable {
-    border: solid 1px #ffffff40;
+    border: solid 1px var(--line-color);
     border-radius: 10px;
     width: 100%;
     overflow: hidden;
@@ -291,16 +325,16 @@ h1 {
     font-size: 30px;
     padding: 0 15px;
     border-radius: 15px;
-    border: solid 1px #ffffffa1;
+    border: solid 1px #ffffff;
     transition: var(--fade);
 }
 
 .seevideo:hover {
-    color: var(--primary-color);
+    color: var(--text);
 }
 
 .seevideo.active {
-    color: var(--primary-color);
+    color: var(--text);
 }
 
 /* botao de fechar */
@@ -343,29 +377,34 @@ body.modal-open {
 }
 
 /* Barra de rolagem principal e do modal */
-.song-modal__content {
+.song-modal__content,
+.filters-dropdown {
     scrollbar-color: #f6f6f6 #0c0c10;
     scrollbar-width: thin;
 }
 
 body::-webkit-scrollbar,
-.song-modal__content::-webkit-scrollbar {
+.song-modal__content::-webkit-scrollbar,
+.filters-dropdown::-webkit-scrollbar {
     width: 10px;
 }
 
 body::-webkit-scrollbar-track,
-.song-modal__content::-webkit-scrollbar-track {
+.song-modal__content::-webkit-scrollbar-track,
+.filters-dropdown::-webkit-scrollbar-track {
     background: #0c0c10;
 }
 
 body::-webkit-scrollbar-thumb,
-.song-modal__content::-webkit-scrollbar-thumb {
+.song-modal__content::-webkit-scrollbar-thumb,
+.filters-dropdown::-webkit-scrollbar-thumb {
     background: #f6f6f6;
     border-radius: 5px;
     border: 2px solid #0c0c10;
 }
 
 body::-webkit-scrollbar-thumb:hover,
-.song-modal__content::-webkit-scrollbar-thumb:hover {
+.song-modal__content::-webkit-scrollbar-thumb:hover,
+.filters-dropdown::-webkit-scrollbar-thumb:hover {
     background: #999999;
 }

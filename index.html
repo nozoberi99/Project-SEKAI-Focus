@@ -6,80 +6,461 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="songstyle.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="Menu Filtros/filtrosMenu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
-    <script src="modalDetails.js" defer></script>
     <title>Project SEKAI Focus</title>
 </head>
 
 <body>
+
+    <div class="filter-menu">
+
+        <div class="menu-backdrop data-menu-close" id="filter-overlay"></div>
+
+        <button class="filter-button" id="filter-button" aria-label="Abrir menu de filtros"
+            onclick="toggleMenuIcon(this); toggleDropdown();">
+            <svg class="filter-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                data-testid="FilterAltIcon">
+                <path
+                    d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39c.51-.66.04-1.61-.79-1.61H5.04c-.83 0-1.3.95-.79 1.61">
+                </path>
+            </svg>
+            <svg class="sort-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="SortIcon">
+                <path d="M3 18h6v-2H3zM3 6v2h18V6zm0 7h12v-2H3z"></path>
+            </svg>
+        </button>
+
+        <div class="filters-dropdown" id="filters-dropdown">
+
+            <!-- pesquisar por nome -->
+            <div class="filter-sections" id="search-section">
+                <h2 class="filter-title">PROCURAR</h2>
+
+                <input class="filter-box" id="name-input" type="text" placeholder="Música, evento, produtor..."
+                    aria-label="Pesquisar personagem">
+            </div>
+
+            <!-- pesquisa por franquia/grupo -->
+            <div class="filter-sections" id="franchise-section">
+                <h2 class="filter-title">UNIT / personagem</h2>
+
+                <div class="multiOpcao">
+                    <button type="button" class="filter-box multiOpcao-trigger" id="franchise-trigger"
+                        aria-haspopup="listbox" aria-expanded="false">
+                        <span class="multiOpcao-trigger-text">Selecione</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="caret-down">
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <div class="multiOpcao-options" id="franchise-options" role="listbox" aria-multiselectable="true">
+                        <div class="multiOpcao-parent-container">
+
+                            <div class="option-select" id="leoni-select">
+                                <div class="multiOpcao-parent-header">
+                                    <label class="multiOpcao-option multiOpcao-parent">
+                                        <input type="checkbox" class="multiOpcao-parent-checkbox" value="leoni"
+                                            data-label="Leo/need">
+                                        <span>Leo/need</span>
+                                    </label>
+                                    <button type="button" class="expand-button">▸</button>
+                                </div>
+
+                                <div class="subOpcoes">
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="ichika" data-label="Ichika Hoshino"
+                                            data-section-class="ichika">
+                                        <span>Ichika Hoshino</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="saki" data-label="Saki Tenma"
+                                            data-section-class="saki">
+                                        <span>Saki Tenma</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="honami" data-label="Honami Mochizuki"
+                                            data-section-class="honami">
+                                        <span>Honami Mochizuki</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="shiho" data-label="Shiho Hinomori"
+                                            data-section-class="shiho">
+                                        <span>Shiho Hinomori</span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="option-select" id="mmj-select">
+                                <div class="multiOpcao-parent-header">
+                                    <label class="multiOpcao-option multiOpcao-parent">
+                                        <input type="checkbox" class="multiOpcao-parent-checkbox" value="mmj"
+                                            data-label="MORE MORE JUMP!">
+                                        <span>MORE MORE JUMP!</span>
+                                    </label>
+                                    <button type="button" class="expand-button">▸</button>
+                                </div>
+
+                                <div class="subOpcoes">
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="minori" data-label="Minori Hanasato"
+                                            data-section-class="minori">
+                                        <span>Minori Hanasato</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="haruka" data-label="Haruka Kiritani"
+                                            data-section-class="haruka">
+                                        <span>Haruka Kiritani</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="airi" data-label="Airi Momoi"
+                                            data-section-class="airi">
+                                        <span>Airi Momoi</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="shizuku" data-label="Shizuku Hinomori"
+                                            data-section-class="shizuku">
+                                        <span>Shizuku Hinomori</span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="option-select" id="vbs-select">
+                                <div class="multiOpcao-parent-header">
+                                    <label class="multiOpcao-option multiOpcao-parent">
+                                        <input type="checkbox" class="multiOpcao-parent-checkbox" value="vbs"
+                                            data-label="Vivid BAD SQUAD">
+                                        <span>Vivid BAD SQUAD</span>
+                                    </label>
+                                    <button type="button" class="expand-button">▸</button>
+                                </div>
+
+                                <div class="subOpcoes">
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="kohane" data-label="Kohane Azusawa"
+                                            data-section-class="kohane">
+                                        <span>Kohane Azusawa</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="an" data-label="An Shiraishi"
+                                            data-section-class="an">
+                                        <span>An Shiraishi</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="akito" data-label="Akito Shinonome"
+                                            data-section-class="akito">
+                                        <span>Akito Shinonome</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="toya" data-label="Toya Aoyagi"
+                                            data-section-class="toya">
+                                        <span>Toya Aoyagi</span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="option-select" id="wxs-select">
+                                <div class="multiOpcao-parent-header">
+                                    <label class="multiOpcao-option multiOpcao-parent">
+                                        <input type="checkbox" class="multiOpcao-parent-checkbox" value="wxs"
+                                            data-label="Wonderland x Showtime">
+                                        <span>Wonderland x Showtime</span>
+                                    </label>
+                                    <button type="button" class="expand-button">▸</button>
+                                </div>
+
+                                <div class="subOpcoes">
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="tsukasa" data-label="Tsukasa Tenma"
+                                            data-section-class="tsukasa">
+                                        <span>Tsukasa Tenma</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="emu" data-label="Emu Otori"
+                                            data-section-class="emu">
+                                        <span>Emu Otori</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="nene" data-label="Nene Kusanagi"
+                                            data-section-class="nene">
+                                        <span>Nene Kusanagi</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="rui" data-label="Rui Kamishiro"
+                                            data-section-class="rui">
+                                        <span>Rui Kamishiro</span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="option-select" id="niigo-select">
+                                <div class="multiOpcao-parent-header">
+                                    <label class="multiOpcao-option multiOpcao-parent">
+                                        <input type="checkbox" class="multiOpcao-parent-checkbox" value="25ji"
+                                            data-label="25ji, Nightcord de.">
+                                        <span>25ji, Nightcord de.</span>
+                                    </label>
+                                    <button type="button" class="expand-button">▸</button>
+                                </div>
+
+                                <div class="subOpcoes">
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="kanade" data-label="Kanade Yoisaki"
+                                            data-section-class="Kanade">
+                                        <span>Kanade Yoisaki</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="mafuyu" data-label="Mafuyu Asahina"
+                                            data-section-class="mafuyu">
+                                        <span>Mafuyu Asahina</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="ena" data-label="Ena Shinonome"
+                                            data-section-class="ena">
+                                        <span>Ena Shinonome</span>
+                                    </label>
+
+                                    <label class="multiOpcao-option multiOpcao-child">
+                                        <input type="checkbox" value="mizuki" data-label="Mizuki Akiyama"
+                                            data-section-class="mizuki">
+                                        <span>Mizuki Akiyama</span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ordenação -->
+            <div class="filter-sections" id="sortby-section">
+                <h2 class="filter-title">ORDENAÇÃO</h2>
+
+                <div class="multiOpcao" id="sort-menu">
+                    <button type="button" class="filter-box multiOpcao-trigger" id="sort-trigger"
+                        aria-haspopup="listbox" aria-expanded="false">
+                        <span class="multiOpcao-trigger-text">Personagem</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="caret-down">
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <div class="multiOpcao-options" id="sort-options" role="listbox">
+                        <button type="button" class="multiOpcao-option sort-option" role="option" data-value="default"
+                            aria-selected="true">Personagem</button>
+                        <button type="button" class="multiOpcao-option sort-option" role="option" data-value="name"
+                            aria-selected="false">Nome</button>
+                        <button type="button" class="multiOpcao-option sort-option" role="option" data-value="unit"
+                            aria-selected="false">Unit</button>
+                        <button type="button" class="multiOpcao-option sort-option" role="option" data-value="vs"
+                            aria-selected="false">Virtual Singer</button>
+                        <button type="button" class="multiOpcao-option sort-option" role="option" data-value="roll"
+                            aria-selected="false">Roll</button>
+                        <button type="button" class="multiOpcao-option sort-option" role="option" data-value="release"
+                            aria-selected="false">Data</button>
+                    </div>
+                </div>
+
+                <label class="sort-direction-option">
+                    <input type="checkbox" id="sort-descending">
+                    <span>Inverter</span>
+                </label>
+
+                <select id="sort-select" hidden aria-hidden="true">
+                    <option value="default">Personagem</option>
+                    <option value="name">Nome</option>
+                    <option value="unit">Unit</option>
+                    <option value="vs">Virtual Singer</option>
+                    <option value="roll">Roll</option>
+                    <option value="release">Data</option>
+                </select>
+
+            </div>
+
+            <!-- por roll -->
+            <div class="filter-sections" id="roll">
+                <h2 class="filter-title">Roll</h2>
+
+                <div class="roll-options">
+                    <button type="button" class="roll-selection" id="roll-no-select" role="option">X</button>
+                    <button type="button" class="roll-selection" role="option" data-value="1">1º</button>
+                    <button type="button" class="roll-selection" role="option" data-value="2">2º</button>
+                    <button type="button" class="roll-selection" role="option" data-value="3">3º</button>
+                    <button type="button" class="roll-selection" role="option" data-value="4">4º</button>
+                    <button type="button" class="roll-selection" role="option" data-value="5">5º</button>
+                    <button type="button" class="roll-selection" role="option" data-value="6">6º</button>
+                    <button type="button" class="roll-selection" role="option" data-value="7">7º</button>
+                </div>
+            </div>
+
+            <!-- por virtual singer -->
+            <div class="filter-sections" id="vsing">
+                <h2 class="filter-title">Virtual Singer</h2>
+
+                <div class="vsing-options">
+                    <button type="button" class="vsing-selection" id="vsing-no-select" role="option">X</button>
+                    <button type="button" class="vsing-selection" role="option" data-value="miku"
+                        data-vsing-label="Miku Hatsune"><img src="/imagens/virtualSingers/Miku-circle.webp"
+                            alt="Hatsune Miku"></button>
+                    <button type="button" class="vsing-selection" role="option" data-value="rin"
+                        data-vsing-label="Rin Kagamine"><img src="/imagens/virtualSingers/Rin-circle.webp"
+                            alt="Kagamine Rin"></button>
+                    <button type="button" class="vsing-selection" role="option" data-value="len"
+                        data-vsing-label="Len Kagamine"><img src="/imagens/virtualSingers/Len-circle.webp"
+                            alt="Kagamine Len"></button>
+                    <button type="button" class="vsing-selection" role="option" data-value="luka"
+                        data-vsing-label="Luka Megurine"><img src="/imagens/virtualSingers/Luka-circle.webp"
+                            alt="Megurine Luka"></button>
+                    <button type="button" class="vsing-selection" role="option" data-value="meiko"
+                        data-vsing-label="MEIKO"><img src="/imagens/virtualSingers/Meiko-circle.webp"
+                            alt="MEIKO"></button>
+                    <button type="button" class="vsing-selection" role="option" data-value="kaito"
+                        data-vsing-label="KAITO"><img src="/imagens/virtualSingers/Kaito-circle.webp"
+                            alt="KAITO"></button>
+                </div>
+            </div>
+
+            <!-- por tipo de evento -->
+            <div class="filter-sections" id="event-type">
+                <h2 class="filter-title">Tipo de Evento</h2>
+
+                <div class="roll-options">
+                    <button type="button" class="event-selection" id="event-no-select" role="option">X</button>
+                    <button type="button" class="event-selection" role="option" data-value="perm">Permanente</button>
+                    <button type="button" class="event-selection" role="option" data-value="hakolim">Hakolim</button>
+                </div>
+            </div>
+
+            <!-- por mv -->
+            <div class="filter-sections" id="mv">
+                <h2 class="filter-title">Music video</h2>
+
+                <div class="mv-options">
+                    <button type="button" class="mv-selection" id="mv-no-select" role="option">X</button>
+                    <button type="button" class="mv-selection" role="option" data-value="2d">2D MV</button>
+                    <button type="button" class="mv-selection" role="option" data-value="3d">3D MV</button>
+                    <button type="button" class="mv-selection" role="option" data-value="og">Original</button>
+                </div>
+            </div>
+
+            <div class="menu-buttons">
+                <button class="search-button" id="search-button" aria-label="Pesquisar personagem">Buscar</button>
+
+                <button class="erase-button" id="erase-button" aria-label="Redefinir filtros">Redefinir</button>
+            </div>
+        </div>
+
+    </div>
+
     <main>
-        <div class="character-focus ichika">
-            <h1 class="character-name">Ichika Hoshino</h1>
+
+        <p id="mensagem-nenhum-resultado" class="mensagem-nenhum-resultado" hidden>Nenhuma música encontrada.</p>
+
+        <div class="character-focus" data-unit="Leo/need">
+            <h1 class="character-name" id="ichika">Ichika Hoshino</h1>
 
             <ul class="focus-songs">
-                <li class="song" data-roll="1" data-tooltip="Ryuusei no Pulse" data-kanji="流星のパルス"
+                <li class="song" id="ichika" data-roll="1" data-tooltip="Ryuusei no Pulse" data-kanji="流星のパルス"
                     data-ptbr="Pulso do Meteoro" data-prod="*Luna" data-vs="MEIKO" data-release="10-09-2021"
-                    data-event="A Bright Future!! (Knock the Future!! / Um Futuro Brilhante!!)"
+                    data-event="A Bright Future!! (Knock the Future!! / Um Futuro Brilhante!!)" data-event-type="perm"
                     data-2d="https://youtu.be/hZgbqUQI64E?si=yh0VLTs9nLg3gU3G" data-3d=""
                     data-og="https://youtu.be/8Zds1FvEtKw?si=TC8D8nCVbpg3JrN4">
                     <img src="imagens/ichika/Ryuusei_no_Pulse_Card.webp" alt="Ryuusei no Pulse"
                         style="object-position: 50% 50%;">
                 </li>
 
-                <li class="song" data-roll="2" data-tooltip="Order Made" data-kanji="オーダーメイド" data-ptbr="Feito a Pedido"
-                    data-prod="Kasamura Toota" data-vs="Megurine Luka" data-release="28-04-2022"
-                    data-event="Live with Memories (Viva com Memórias)"
+                <li class="song" id="ichika" data-roll="2" data-tooltip="Order Made" data-kanji="オーダーメイド"
+                    data-ptbr="Feito a Pedido" data-prod="Kasamura Toota" data-vs="Megurine Luka"
+                    data-release="28-04-2022" data-event="Live with Memories (Viva com Memórias)" data-event-type="perm"
                     data-2d="https://youtu.be/K558E_JmZ6g?si=pnNprKgl_69Th_7K"
                     data-3d="https://youtu.be/eEs1PD_33EM?si=DrEacSAshOrmI158"
                     data-og="https://youtu.be/sHXrqptOU2s?si=YJmIGFsjeAFzC0Ck">
                     <img src="imagens/ichika/Order_Made_Card.webp" alt="Order Made" style="object-position: 60% 50%;">
                 </li>
 
-                <li class="song" data-roll="3" data-tooltip="the WALL" data-kanji="" data-ptbr="o MURO"
+                <li class="song" id="ichika" data-roll="3" data-tooltip="the WALL" data-kanji="" data-ptbr="o MURO"
                     data-prod="buzzG" data-vs="Hatsune Miku" data-release="18-11-2022"
-                    data-event="Echo My Melody (Ecoe Minha Melodia)" data-2d=""
+                    data-event="Echo My Melody (Ecoe Minha Melodia)" data-event-type="perm" data-2d=""
                     data-3d="https://youtu.be/chjFdvgWAjo?si=R-TsvbH1VSkoCyP6"
                     data-og="https://youtu.be/5m6TyoB2mV8?si=UpkB5znXl_1xe-uK">
                     <img src="imagens/ichika/The_WALL_Card.webp" alt="The WALL" style="object-position: 50% 50%;">
                 </li>
 
-                <li class="song" data-roll="4" data-tooltip="Hoshi wo Tsunagu" data-kanji="星を繋ぐ"
+                <li class="song" id="ichika" data-roll="4" data-tooltip="Hoshi wo Tsunagu" data-kanji="星を繋ぐ"
                     data-ptbr="Conectando as Estrelas" data-prod="40mp, Hifumi" data-vs="KAITO"
                     data-release="21-07-2023" data-event="Our Constellation of Song (Nossa Constelação de Canções)"
-                    data-2d="https://youtu.be/Qu4oqtVmBck?si=kel7JgKPMgjowlPM" data-3d=""
+                    data-event-type="perm" data-2d="https://youtu.be/Qu4oqtVmBck?si=kel7JgKPMgjowlPM" data-3d=""
                     data-og="https://youtu.be/Fo3qg44Rn6Q?si=5Ovpc99cP17AGa99">
                     <img src="imagens/ichika/Hoshi_wo_Tsunagu_Card.webp" alt="Hoshi wo Tsunagu"
                         style="object-position: 45% 50%;">
                 </li>
 
-                <li class="song" data-roll="5" data-tooltip="Soredemo Bokura wa Utau Koto wo Yamenai"
+                <li class="song" id="ichika" data-roll="5" data-tooltip="Soredemo Bokura wa Utau Koto wo Yamenai"
                     data-kanji="それでも僕らは歌うことをやめない" data-ptbr="Mesmo Assim, Não Vamos Parar de Cantar" data-prod="Anki Go"
                     data-vs="Kagamine Len" data-release="20-09-2024"
-                    data-event="This moment with you! (Este momento com você!)"
+                    data-event="This moment with you! (Este momento com você!)" data-event-type="perm"
                     data-2d="https://youtu.be/ftYDy4SyK4E?si=TCYwDOAUtUYorplY" data-3d=""
                     data-og="https://youtu.be/MBU2UfZQ5m0?si=0NLhCbIXbQ8y8Oux">
                     <img src="imagens/ichika/Soredemo_Bokura_wa_Utau_Koto_wo_Yamenai_Card.webp"
                         alt="Soredemo Bokura wa Utau Koto wo Yamenai" style="object-position: 45% 50%;">
+                    <p id="comment" hidden>Olá, eu sou Aoki Go e fui responsável por compor uma música para Leo/need.
+                        É um prazer conhecê-los. O tema da música que fiquei encarregado de criar desta vez ressoou
+                        profundamente comigo; por isso, lembro-me de que todo o processo de criação — incluindo a
+                        composição da letra — fluiu de maneira incrivelmente tranquila. Ficaria muito feliz se pudesse,
+                        de alguma forma, acrescentar mais um toque de cor à história de Leo/need. Por favor, ouçam e
+                        toquem bastante esta música!</p>
                 </li>
 
-                <li class="song" data-roll="6" data-tooltip="Star" data-kanji="スター" data-ptbr="Planeta"
+                <li class="song" id="ichika" data-roll="6" data-tooltip="Star" data-kanji="スター" data-ptbr="Planeta"
                     data-prod="Daibakuhashin" data-vs="MEIKO" data-release="19-10-2025"
-                    data-event="Connecting With Your Heart Beat (君と繋ぐHeart Beat / Conectando Com os Seus Batimentos)"
-                    data-2d="https://youtu.be/NSAILdVVOg8?si=9t4YAJM-c3mLxe_d"
+                    data-event="Connecting With Your Heart Beat (Conectando Com os Seus Batimentos)"
+                    data-event-type="perm" data-2d="https://youtu.be/NSAILdVVOg8?si=9t4YAJM-c3mLxe_d"
                     data-3d="https://youtu.be/NGiLmXEydrg?si=JVeFfU-UCph-eeF1"
                     data-og="https://youtu.be/6p6QKhvKkVw?si=ffmF6xUGDv4e23ky">
                     <img src="imagens/ichika/Star_Card.webp" alt="Star" style="object-position: 25% 50%;">
+                    <p id="comment" hidden>Olá, eu sou o Daibakuhashin. Desta vez, tive a oportunidade de compor uma
+                        música para o grupo Leo/need. Criei essa canção voltando ao básico. Sinto que Leo/need me fez
+                        relembrar um sentimento que ninguém jamais deveria esquecer. Aguardem ansiosamente.</p>
                 </li>
 
-                <li class="song" data-roll="7" data-tooltip="Tenbin, Yubisaki de Furete" data-kanji="天秤、指先で触れて"
-                    data-ptbr="Tocando no Equilíbrio" data-prod="Ukaroku" data-vs="Kagamine Rin"
+                <li class="song" id="ichika" data-roll="7" data-tooltip="Tenbin, Yubisaki de Furete"
+                    data-kanji="天秤、指先で触れて" data-ptbr="Tocando no Equilíbrio" data-prod="Ukaroku" data-vs="Kagamine Rin"
                     data-release="31-07-2026" data-event="Echo of a Prayer (Eco de uma Oração)"
-                    data-2d="https://youtu.be/ul97PWn9gtk?si=Yt2-DYOC3aQGFit6" data-3d=""
+                    data-event-type="hakolim" data-2d="https://youtu.be/ul97PWn9gtk?si=Yt2-DYOC3aQGFit6" data-3d=""
                     data-og="https://youtu.be/MSVNeSQQMMY?si=5hKKtNbYlGTsg43U">
                     <img src="imagens/ichika/Tenbin,_Yubisaki_de_Furete_Card.webp" alt="Tenbin, Yubisaki de Furete"
                         style="object-position: 46% 50%;">
@@ -94,7 +475,9 @@
                 </li>
 
             </ul>
+
         </div>
+
     </main>
 
     <div class="song-modal" id="song-modal" role="dialog" aria-modal="true" aria-labelledby="modal-song-title" hidden>
@@ -184,6 +567,19 @@
         </div>
     </div>
 
+    <script src="script.js" defer></script>
+    <script src="modalDetails.js" defer></script>
+    <script src="Menu Filtros/filtrosMenu.js" defer></script>
+    <script type="module" src="Menu Filtros/buttonAction.js"></script>
+    <script type="module" src="Menu Filtros/animacoesEntrada.js"></script>
+    <script type="module" src="Menu Filtros/resetarFiltros.js"></script>
+    <script type="module" src="Menu Filtros/filtroRoll.js"></script>
+    <script type="module" src="Menu Filtros/filtroVirtualSinger.js"></script>
+    <script type="module" src="Menu Filtros/filtroEvento.js"></script>
+    <script type="module" src="Menu Filtros/filtroMv.js"></script>
+    <script type="module" src="Menu Filtros/ordenações/ordenacaoMusicas.js"></script>
+    <script src="Menu Filtros/multiselect.js" defer></script>
+    <script src="Menu Filtros/parentChild.js" defer></script>
 
 </body>
 

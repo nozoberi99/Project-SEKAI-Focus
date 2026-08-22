@@ -1,22 +1,53 @@
+@property --song-gradient-opacity {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
+#leoni-select .multiOpcao-option input {
+    accent-color: #45d;
+}
+
+#mmj-select .multiOpcao-option input {
+    accent-color: #6ccb20;
+}
+
+#vbs-select .multiOpcao-option input {
+    accent-color: #e16;
+}
+
+#wxs-select .multiOpcao-option input {
+    accent-color: #f90;
+}
+
+#niigo-select .multiOpcao-option input {
+    accent-color: #849;
+}
+
 /* Ichika Hoshino */
 
-.ichika h1,
-h2 {
-    color: #3ae;
-}
-
-.ichika .song::after {
-    background: #34aaefcc;
-    color: #0c0c0c;
-}
-
+#ichika,
+.ichika-hoshino h2,
 .ichika-hoshino .text-style {
     color: #3ae;
 }
 
-.ichika-hoshino .song-modal__infoheader, .seevideo {
-    background: linear-gradient(170deg,#33aaee, #34aaefa0);
+#ichika::after {
+    background:
+        linear-gradient(170deg,
+            rgb(51 170 238 / var(--song-gradient-opacity)),
+            rgb(21 111 163 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#ichika:hover::after {
+    --song-gradient-opacity: 1;
     color: #0c0c0c;
+}
+
+.ichika-hoshino .song-modal__infoheader,
+.ichika-hoshino .seevideo {
+    background: linear-gradient(170deg, #33aaee, #156fa3);
 }
 
 .ichika-hoshino .song-modal__content {
@@ -26,4 +57,40 @@ h2 {
 
 .ichika-hoshino .song-modal__content::-webkit-scrollbar-thumb {
     background: #3ae;
+}
+
+/* Saki Tenma */
+
+#saki,
+.saki-tenma h2,
+.saki-tenma .text-style {
+    color: rgb(255, 221, 68);
+}
+
+#saki::after {
+    background:
+        linear-gradient(170deg,
+            rgb(255 221 68 / var(--song-gradient-opacity)),
+            rgb(238 196 7 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#saki:hover::after,
+.saki-tenma .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.saki-tenma .song-modal__infoheader,
+.saki-tenma .seevideo {
+    background: linear-gradient(170deg, #fd4, rgb(238, 196, 7));
+}
+
+.saki-tenma .song-modal__content {
+    scrollbar-color: #fd4 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.saki-tenma .song-modal__content::-webkit-scrollbar-thumb {
+    background: #fd4;
 }
