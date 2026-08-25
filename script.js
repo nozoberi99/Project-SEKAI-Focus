@@ -12,7 +12,7 @@ let modalCharacterClass;
 function getCharacterClass(song) {
     const characterFocus = song.closest('.character-focus');
     const heading = characterFocus?.querySelector('.character-name');
-    const characterName = characterFocus?.id || heading?.textContent.trim();
+    const characterName = characterFocus?.id || heading?.textContent.trim() || song.dataset.characterClass;
 
     return characterName?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
@@ -57,6 +57,7 @@ function closeModal() {
 }
 
 songs.forEach((song) => {
+    song.dataset.characterClass = getCharacterClass(song);
     song.tabIndex = 0;
     song.setAttribute('role', 'button');
     song.setAttribute('aria-label', `Abrir detalhes de ${song.dataset.tooltip}`);

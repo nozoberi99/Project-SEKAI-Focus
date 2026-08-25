@@ -26,17 +26,8 @@
         padding: 0;
     }
 
-    .song img,
-    .song img:hover {
-        height: clamp(180px, 34vw, 250px);
-    }
-
-    .song::after {
-        display: none;
-    }
-
     .song-modal {
-        padding: 8px;
+        padding: 50px;
     }
 
     .song-modal__content {
@@ -46,9 +37,9 @@
 
     .song-modal__game-img {
         width: calc(100% - 40px);
-        margin: 12px 20px;
-        top: 24vw;
-        gap: 12px;
+        margin: 12px;
+        top: 32vw;
+        gap: 18px;
         align-items: flex-end;
     }
 
@@ -58,17 +49,17 @@
     }
 
     .song-modal__event {
-        width: min(48%, 220px);
+        width: min(38%, 220px);
         height: auto;
         margin-top: 0;
     }
 
     .song-modal__details {
-        margin: 18px 12px;
+        margin: 36px 12px;
     }
 
     .song-modal h2 {
-        font-size: clamp(2rem, 9vw, 4rem);
+        font-size: 55px;
         line-height: 0.8;
         margin-top: 10px;
     }
@@ -116,9 +107,22 @@
 }
 
 @media (max-width: 420px) {
-    .song img,
-    .song img:hover {
-        height: 43vw;
+    .kanji-font {
+        font-size: 12px;
+    }
+
+    .song {
+        height: 141px;
+        width: 250px;
+    }
+
+    .song::after {
+        padding: 7px 2px 5px;
+    }
+
+    .song img {
+        object-position: 50% 50% !important;
+        transform: unset !important;
     }
 
     .song-modal__image {
@@ -126,11 +130,23 @@
     }
 
     .song-modal__game-img {
-        top: 30vw;
+        top: 27vw;
     }
 
     .song-modal__details {
-        margin-inline: 10px;
+        margin: 18px 12px;
+    }
+
+    .song-modal h2 {
+        font-size: 35px;
+        margin-bottom: 10px;
+        line-height: 0.8;
+        font-family: var(--font-titles);
+        letter-spacing: 0.03em;
+    }
+
+    .song-modal__infoheader {
+        width: 90px;
     }
 
     .song-modal__comment,

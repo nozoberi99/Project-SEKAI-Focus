@@ -173,16 +173,15 @@
     cursor: pointer;
 }
 
-
-
 .sort-header {
     flex-basis: 100%;
     width: 100%;
-    margin: 20px 0 8px;
+    margin: 12px 0 8px 0;
     padding: 8px 1px;
     border-bottom: 1px solid var(--line-color);
     color: var(--text);
     font-size: 2rem;
+    line-height: 0.5;
     text-align: left;
 }
 
@@ -516,4 +515,90 @@ input {
     color: var(--terciary-color);
     font-weight: 700;
     margin: 25px 20px;
+}
+
+@media (max-width: 768px) {
+    .filters-dropdown {
+        position: fixed;
+        top: 72px;
+        left: 50%;
+        width: min(680px, calc(100vw - 20px));
+        max-height: calc(100dvh - 88px);
+    }
+
+    .filter-sections {
+        margin: 22px 16px;
+    }
+
+    .filter-title {
+        font-size: clamp(2rem, 8vw, 2.75rem);
+        line-height: 0.9;
+    }
+
+    .filter-box,
+    #name-input,
+    #name-input::placeholder,
+    .sort-direction-option,
+    .sort-option,
+    .multiOpcao-parent {
+        font-size: clamp(1.25rem, 5vw, 1.75rem);
+    }
+
+    .roll-selection,
+    .event-selection,
+    .mv-selection {
+        font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+        padding: 4px 12px;
+    }
+
+    .multiOpcao-options {
+        max-height: 45vh;
+        overflow-y: auto;
+    }
+
+    .menu-buttons {
+        position: sticky;
+        bottom: 0;
+        background: var(--bg);
+    }
+
+    .search-button,
+    .erase-button {
+        font-size: clamp(2rem, 8vw, 3.25rem);
+        line-height: 1;
+        padding: 6px 8px;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 420px) {
+    .filters-dropdown {
+        top: 70px;
+        width: calc(100vw - 12px);
+        max-height: calc(100dvh - 76px);
+        border-radius: 16px;
+    }
+
+    .filter-sections {
+        margin: 18px 12px;
+    }
+
+    .filter-title {
+        font-size: clamp(1.8rem, 9vw, 2.25rem);
+    }
+
+    .vsing-selection img {
+        height: clamp(46px, 15vw, 58px);
+    }
+
+    #vsing-no-select {
+        width: 58px;
+        height: 58px;
+        font-size: 42px;
+    }
+
+    .search-button,
+    .erase-button {
+        font-size: clamp(1.65rem, 8vw, 2.25rem);
+    }
 }

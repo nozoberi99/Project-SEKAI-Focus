@@ -201,3 +201,111 @@
 .minori-hanasato .song-modal__content::-webkit-scrollbar-thumb {
     background: #ffcdac;
 }
+
+/* Haruka Kiritani */
+
+#haruka,
+.haruka-kiritani h2,
+.haruka-kiritani .text-style {
+    color: #9cf;
+}
+
+#haruka::after {
+    background:
+        linear-gradient(170deg,
+            rgb(153 204 255 / var(--song-gradient-opacity)),
+            rgb(111 183 255 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#haruka:hover::after,
+.haruka-kiritani .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.haruka-kiritani .song-modal__infoheader,
+.haruka-kiritani .seevideo {
+    background: linear-gradient(170deg, #99ccff, rgb(111, 183, 255));
+}
+
+.minori-hanasato .song-modal__content {
+    scrollbar-color: #9cf #0c0c10;
+    scrollbar-width: thin;
+}
+
+.minori-hanasato .song-modal__content::-webkit-scrollbar-thumb {
+    background: #9cf;
+}
+
+/* Airi Momoi */
+
+#airi,
+.airi-momoi h2,
+.airi-momoi .text-style {
+    color: #fac;
+}
+
+#airi::after {
+    background:
+        linear-gradient(170deg,
+            rgb(255 170 204 / var(--song-gradient-opacity)),
+            rgb(255 126 177 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#airi:hover::after,
+.airi-momoi .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.airi-momoi .song-modal__infoheader,
+.airi-momoi .seevideo {
+    background: linear-gradient(170deg, #fac, rgb(255, 126, 177));
+}
+
+.airi-momoi .song-modal__content {
+    scrollbar-color: #fac #0c0c10;
+    scrollbar-width: thin;
+}
+
+.airi-momoi .song-modal__content::-webkit-scrollbar-thumb {
+    background: #fac;
+}
+
+/* Shizuku Hinomori */
+
+#shizuku,
+.shizuku-hinomori h2,
+.shizuku-hinomori .text-style {
+    color: #9ed;
+}
+
+#shizuku::after {
+    background:
+        linear-gradient(170deg,
+            rgb(153 238 221 / var(--song-gradient-opacity)),
+            rgb(84 235 205 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#shizuku:hover::after,
+.shizuku-hinomori .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.shizuku-hinomori .song-modal__infoheader,
+.shizuku-hinomori .seevideo {
+    background: linear-gradient(170deg, #9ed, rgb(84, 235, 205));
+}
+
+.shizuku-hinomori .song-modal__content {
+    scrollbar-color: #9ed #0c0c10;
+    scrollbar-width: thin;
+}
+
+.shizuku-hinomori .song-modal__content::-webkit-scrollbar-thumb {
+    background: #9ed;
+}
