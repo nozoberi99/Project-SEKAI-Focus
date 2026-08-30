@@ -226,10 +226,7 @@
 
 .vsing-selection img {
     filter:
-        drop-shadow(1px 0 0 var(--line-color))
-        drop-shadow(-1px 0 0 var(--line-color))
-        drop-shadow(0 1px 0 var(--line-color))
-        drop-shadow(0 -1px 0 var(--line-color));
+        drop-shadow(1px 0 0 var(--line-color)) drop-shadow(-1px 0 0 var(--line-color)) drop-shadow(0 1px 0 var(--line-color)) drop-shadow(0 -1px 0 var(--line-color));
     width: auto;
     height: 65px;
     transition: var(--fade);
@@ -273,10 +270,7 @@
 
 .vsing-selection img:hover {
     filter:
-        drop-shadow(1px 0 0 var(--text))
-        drop-shadow(-1px 0 0 var(--text))
-        drop-shadow(0 1px 0 var(--text))
-        drop-shadow(0 -1px 0 var(--text));
+        drop-shadow(1px 0 0 var(--text)) drop-shadow(-1px 0 0 var(--text)) drop-shadow(0 1px 0 var(--text)) drop-shadow(0 -1px 0 var(--text));
 }
 
 .roll-selection.selected,
@@ -288,10 +282,7 @@
 
 .vsing-selection img.selected {
     filter:
-        drop-shadow(1px 0 0 var(--text))
-        drop-shadow(-1px 0 0 var(--text))
-        drop-shadow(0 1px 0 var(--text))
-        drop-shadow(0 -1px 0 var(--text));
+        drop-shadow(1px 0 0 var(--text)) drop-shadow(-1px 0 0 var(--text)) drop-shadow(0 1px 0 var(--text)) drop-shadow(0 -1px 0 var(--text));
 }
 
 #roll-no-select,
@@ -477,6 +468,10 @@ input {
 
 .menu-buttons {
     display: flex;
+    position: sticky;
+    bottom: 0;
+    background: var(--bg);
+    z-index: 1500;
 }
 
 .search-button,
@@ -554,12 +549,6 @@ input {
     .multiOpcao-options {
         max-height: 45vh;
         overflow-y: auto;
-    }
-
-    .menu-buttons {
-        position: sticky;
-        bottom: 0;
-        background: var(--bg);
     }
 
     .search-button,

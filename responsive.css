@@ -112,8 +112,8 @@
     }
 
     .song {
-        height: 141px;
-        width: 250px;
+        height: 163px;
+        width: 290px;
     }
 
     .song::after {
@@ -123,6 +123,10 @@
     .song img {
         object-position: 50% 50% !important;
         transform: unset !important;
+    }
+
+    .song-modal__content {
+        width: 130%;
     }
 
     .song-modal__image {

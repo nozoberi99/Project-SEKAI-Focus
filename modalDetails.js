@@ -49,20 +49,38 @@ function updateSongDetails(song) {
 
 function updateSongDescription(song) {
   const characterHeading = song.closest('.character-focus')?.querySelector('.character-name');
-  const comment = song.querySelector('#comment')?.textContent.trim() || '';
-  const commentElement = document.querySelector('.song-modal__comment');
-  const authorElement = document.querySelector('.song-modal__author');
+  const comments = Array.from(song.querySelectorAll('#comment'))
+    .map((element) => element.textContent.trim());
+  const authors = Array.from(song.querySelectorAll('.author'))
+    .map((element) => element.textContent.trim());
+  const commentsContainer = document.getElementById('modal-song-comments');
   const data = song.dataset;
   const kanji = data.kanji?.trim() || '';
   const portuguese = data.ptbr?.trim() || '';
   const languageElement = document.getElementById('modal-song-description-lang');
   const commaElement = document.getElementById('modal-song-description-comma');
 
-  if (commentElement) {
-    commentElement.hidden = !comment;
-  }
-  if (authorElement) {
-    authorElement.hidden = !comment;
+  if (commentsContainer) {
+    commentsContainer.replaceChildren();
+
+    comments.forEach((comment, index) => {
+      if (!comment) {
+        return;
+      }
+
+      const commentElement = document.createElement('p');
+      commentElement.className = 'song-modal__comment';
+      commentElement.textContent = `"${comment}"`;
+      commentsContainer.append(commentElement);
+
+      const author = authors[index];
+      if (author) {
+        const authorElement = document.createElement('p');
+        authorElement.className = 'song-modal__author';
+        authorElement.textContent = author;
+        commentsContainer.append(authorElement);
+      }
+    });
   }
   if (languageElement) {
     languageElement.hidden = !kanji && !portuguese;
@@ -72,8 +90,6 @@ function updateSongDescription(song) {
   }
 
   const values = {
-    'modal-song-comment': comment,
-    'modal-song-producer': data.prod || '',
     'modal-song-description-title': data.tooltip || '',
     'modal-song-description-kanji': kanji,
     'modal-song-description-ptbr': portuguese,

@@ -229,12 +229,12 @@
     background: linear-gradient(170deg, #99ccff, rgb(111, 183, 255));
 }
 
-.minori-hanasato .song-modal__content {
+.haruka-kiritani .song-modal__content {
     scrollbar-color: #9cf #0c0c10;
     scrollbar-width: thin;
 }
 
-.minori-hanasato .song-modal__content::-webkit-scrollbar-thumb {
+.haruka-kiritani .song-modal__content::-webkit-scrollbar-thumb {
     background: #9cf;
 }
 
@@ -308,4 +308,427 @@
 
 .shizuku-hinomori .song-modal__content::-webkit-scrollbar-thumb {
     background: #9ed;
+}
+
+/* Kohane Azusawa */
+
+#kohane,
+.kohane-azusawa h2,
+.kohane-azusawa .text-style {
+    color: #ff679a;
+}
+
+#kohane::after {
+    background:
+        linear-gradient(170deg,
+            rgb(255 103 154 / var(--song-gradient-opacity)),
+            rgb(255 76 136 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#kohane:hover::after,
+.kohane-azusawa .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.kohane-azusawa .song-modal__infoheader,
+.kohane-azusawa .seevideo {
+    background: linear-gradient(170deg, rgb(255, 103, 154), rgb(255, 76, 136));
+}
+
+.kohane-azusawa .song-modal__content {
+    scrollbar-color: #ff679a #0c0c10;
+    scrollbar-width: thin;
+}
+
+.kohane-azusawa .song-modal__content::-webkit-scrollbar-thumb {
+    background: #ff679a;
+}
+
+/* An Shiraishi */
+
+#an,
+.an-shiraishi h2,
+.an-shiraishi .text-style {
+    color: #0bd;
+}
+
+#an::after {
+    background:
+        linear-gradient(170deg,
+            rgb(0 187 221 / var(--song-gradient-opacity)),
+            rgb(0 136 160 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#an:hover::after,
+.an-shiraishi .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.an-shiraishi .song-modal__infoheader,
+.an-shiraishi .seevideo {
+    background: linear-gradient(170deg, rgb(0, 187, 221), rgb(0, 136, 160));
+}
+
+.an-shiraishi .song-modal__content {
+    scrollbar-color: #0bd #0c0c10;
+    scrollbar-width: thin;
+}
+
+.an-shiraishi .song-modal__content::-webkit-scrollbar-thumb {
+    background: #0bd;
+}
+
+/* Akito Shinonome */
+
+#akito,
+.akito-shinonome h2,
+.akito-shinonome .text-style {
+    color: #f72;
+}
+
+#akito::after {
+    background:
+        linear-gradient(170deg,
+            rgb(255 119 34 / var(--song-gradient-opacity)),
+            rgb(255 102 7 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#akito:hover::after,
+.akito-shinonome .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.akito-shinonome .song-modal__infoheader,
+.akito-shinonome .seevideo {
+    background: linear-gradient(170deg, rgb(255, 119, 34), rgb(255, 102, 7));
+}
+
+.akito-shinonome .song-modal__content {
+    scrollbar-color: #f72 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.akito-shinonome .song-modal__content::-webkit-scrollbar-thumb {
+    background: #f72;
+}
+
+/* Toya Aoyagi */
+
+#toya,
+.toya-aoyagi h2,
+.toya-aoyagi .text-style {
+    color: #07d;
+}
+
+#toya::after {
+    background:
+        linear-gradient(170deg,
+            rgb(0 119 221 / var(--song-gradient-opacity)),
+            rgb(0 79 148 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#toya:hover::after,
+.toya-aoyagi .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+}
+
+.toya-aoyagi .song-modal__infoheader,
+.toya-aoyagi .seevideo {
+    background: linear-gradient(170deg, rgb(0, 119, 221), rgb(0, 79, 148));
+}
+
+.toya-aoyagi .song-modal__content {
+    scrollbar-color: #07d #0c0c10;
+    scrollbar-width: thin;
+}
+
+.toya-aoyagi .song-modal__content::-webkit-scrollbar-thumb {
+    background: #07d;
+}
+
+/* Tsukasa Tenma */
+#tsukasa,
+.tsukasa-tenma h2,
+.tsukasa-tenma .text-style {
+    color: #fb0;
+}
+
+#tsukasa::after {
+    background:
+        linear-gradient(170deg,
+            rgb(255 187 0 / var(--song-gradient-opacity)),
+            rgb(184 135 0 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#tsukasa:hover::after,
+.tsukasa-tenma .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.tsukasa-tenma .song-modal__infoheader,
+.tsukasa-tenma .seevideo {
+    background: linear-gradient(170deg, rgb(255, 187, 0), rgb(184, 135, 0));
+}
+
+.tsukasa-tenma .song-modal__content {
+    scrollbar-color: #fb0 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.tsukasa-tenma .song-modal__content::-webkit-scrollbar-thumb {
+    background: #fb0;
+}
+
+/* Emu Otori */
+#emu,
+.emu-otori h2,
+.emu-otori .text-style {
+    color: #f6b;
+}
+
+#emu::after {
+    background:
+        linear-gradient(170deg,
+            rgb(255 102 187 / var(--song-gradient-opacity)),
+            rgb(255 59 167 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#emu:hover::after,
+.emu-otori .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.emu-otori .song-modal__infoheader,
+.emu-otori .seevideo {
+    background: linear-gradient(170deg, rgb(255, 102, 187), rgb(255, 59, 167));
+}
+
+.emu-otori .song-modal__content {
+    scrollbar-color: #f6b #0c0c10;
+    scrollbar-width: thin;
+}
+
+.emu-otori .song-modal__content::-webkit-scrollbar-thumb {
+    background: #f6b;
+}
+
+/* Nene Kusanagi */
+#nene,
+.nene-kusanagi h2,
+.nene-kusanagi .text-style {
+    color: #3d9;
+}
+
+#nene::after {
+    background:
+        linear-gradient(170deg,
+            rgb(51 221 153 / var(--song-gradient-opacity)),
+            rgb(5 218 133 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#nene:hover::after,
+.nene-kusanagi .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.nene-kusanagi .song-modal__infoheader,
+.nene-kusanagi .seevideo {
+    background: linear-gradient(170deg, rgb(51, 221, 153), rgb(5, 218, 133));
+}
+
+.nene-kusanagi .song-modal__content {
+    scrollbar-color: #3d9 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.nene-kusanagi .song-modal__content::-webkit-scrollbar-thumb {
+    background: #3d9;
+}
+
+/* Rui Kamishiro */
+#rui,
+.rui-kamishiro h2,
+.rui-kamishiro .text-style {
+    color: #b8e;
+}
+
+#rui::after {
+    background:
+        linear-gradient(170deg,
+            rgb(187 136 238 / var(--song-gradient-opacity)),
+            rgb(163 94 232 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#rui:hover::after,
+.rui-kamishiro .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.rui-kamishiro .song-modal__infoheader,
+.rui-kamishiro .seevideo {
+    background: linear-gradient(170deg, rgb(187, 136, 238), rgb(163, 94, 232));
+}
+
+.rui-kamishiro .song-modal__content {
+    scrollbar-color: #b8e #0c0c10;
+    scrollbar-width: thin;
+}
+
+.rui-kamishiro .song-modal__content::-webkit-scrollbar-thumb {
+    background: #b8e;
+}
+
+/* Kanade Yoisaki */
+#kanade,
+.kanade-yoisaki h2,
+.kanade-yoisaki .text-style {
+    color: #b68;
+}
+
+#kanade::after {
+    background:
+        linear-gradient(170deg,
+            rgb(187 102 136 / var(--song-gradient-opacity)),
+            rgb(187 66 115 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#kanade:hover::after,
+.kanade-yoisaki .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.kanade-yoisaki .song-modal__infoheader,
+.kanade-yoisaki .seevideo {
+    background: linear-gradient(170deg, rgb(187, 102, 136), rgb(187, 66, 115));
+}
+
+.kanade-yoisaki .song-modal__content {
+    scrollbar-color: #b68 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.kanade-yoisaki .song-modal__content::-webkit-scrollbar-thumb {
+    background: #b68;
+}
+
+/* Mafuyu Asahina */
+#mafuyu,
+.mafuyu-asahina h2,
+.mafuyu-asahina .text-style {
+    color: #88c;
+}
+
+#mafuyu::after {
+    background:
+        linear-gradient(170deg,
+            rgb(136 136 204 / var(--song-gradient-opacity)),
+            rgb(99 99 202 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#mafuyu:hover::after,
+.mafuyu-asahina .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.mafuyu-asahina .song-modal__infoheader,
+.mafuyu-asahina .seevideo {
+    background: linear-gradient(170deg, rgb(136, 136, 204), rgb(99, 99, 202));
+}
+
+.mafuyu-asahina .song-modal__content {
+    scrollbar-color: #88c #0c0c10;
+    scrollbar-width: thin;
+}
+
+.mafuyu-asahina .song-modal__content::-webkit-scrollbar-thumb {
+    background: #88c;
+}
+
+/* Ena Shinonome */
+#ena,
+.ena-shinonome h2,
+.ena-shinonome .text-style {
+    color: #ca8;
+}
+
+#ena::after {
+    background:
+        linear-gradient(170deg,
+            rgb(204 170 136 / var(--song-gradient-opacity)),
+            rgb(203 152 100 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#ena:hover::after,
+.ena-shinonome .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.ena-shinonome .song-modal__infoheader,
+.ena-shinonome .seevideo {
+    background: linear-gradient(170deg, rgb(204, 170, 136), rgb(203, 152, 100));
+}
+
+.ena-shinonome .song-modal__content {
+    scrollbar-color: #ca8 #0c0c10;
+    scrollbar-width: thin;
+}
+
+.ena-shinonome .song-modal__content::-webkit-scrollbar-thumb {
+    background: #ca8;
+}
+
+/* Mizuki Akiyama */
+#mizuki,
+.mizuki-akiyama h2,
+.mizuki-akiyama .text-style {
+    color: #e4a8ca;
+}
+
+#mizuki::after {
+    background:
+        linear-gradient(170deg,
+            rgb(228 168 202 / var(--song-gradient-opacity)),
+            rgb(221 111 173 / var(--song-gradient-opacity))),
+        var(--bg2);
+}
+
+#mizuki:hover::after,
+.mizuki-akiyama .song-modal__infoheader {
+    --song-gradient-opacity: 1;
+    color: #0c0c0c;
+}
+
+.mizuki-akiyama .song-modal__infoheader,
+.mizuki-akiyama .seevideo {
+    background: linear-gradient(170deg, rgb(228, 168, 202), rgb(221, 111, 173));
+}
+
+.mizuki-akiyama .song-modal__content {
+    scrollbar-color: #e4a8ca #0c0c10;
+    scrollbar-width: thin;
+}
+
+.mizuki-akiyama .song-modal__content::-webkit-scrollbar-thumb {
+    background: #e4a8ca;
 }
