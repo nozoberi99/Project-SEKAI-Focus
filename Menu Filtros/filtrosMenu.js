@@ -26,13 +26,3 @@ function toggleDropdown() {
 document.getElementById("filter-overlay")?.addEventListener("click", closeDropdown);
 document.getElementById("search-button")?.addEventListener("click", closeDropdown);
 
-const moreOptionsButton = document.getElementById("more-options-button");
-const moreOptionsPanel = document.getElementById("more-options-panel");
-
-if (moreOptionsButton && moreOptionsPanel) {
-    moreOptionsButton.addEventListener("click", () => {
-        const isExpanded = moreOptionsButton.getAttribute("aria-expanded") === "true";
-        moreOptionsButton.setAttribute("aria-expanded", String(!isExpanded));
-        moreOptionsPanel.hidden = isExpanded;
-    });
-}

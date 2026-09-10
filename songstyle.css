@@ -1,734 +1,283 @@
-@property --song-gradient-opacity {
-    syntax: "<number>";
-    inherits: false;
-    initial-value: 0;
+/* headers ordenação unit */
+
+#sort-unit-leo-need.sort-header {
+    background-color: #45d;
 }
 
-#leoni-select .multiOpcao-option input {
-    accent-color: #45d;
+#sort-unit-more-more-jump.sort-header {
+    background-color: #6ccb20;
 }
 
-#mmj-select .multiOpcao-option input {
-    accent-color: #6ccb20;
+#sort-unit-vivid-bad-squad.sort-header {
+    background-color: #e16;
 }
 
-#vbs-select .multiOpcao-option input {
-    accent-color: #e16;
+#sort-unit-wonderlands-x-showtime.sort-header {
+    background-color: #f90;
 }
 
-#wxs-select .multiOpcao-option input {
-    accent-color: #f90;
+#sort-unit-25ji-nightcord-de.sort-header {
+    background-color: #849;
 }
 
-#niigo-select .multiOpcao-option input {
-    accent-color: #849;
+.song-info-panel__head.unit-leo-need::before {
+    background-image: url(imagens/icons/leo_need.svg);
+}
+
+.song-info-panel__head.unit-more-more-jump::before {
+    background-image: url(imagens/icons/more_more_jump.svg);
+}
+
+.song-info-panel__head.unit-vivid-bad-squad::before {
+    background-image: url(imagens/icons/vivid_bad_squad.svg);
+}
+
+.song-info-panel__head.unit-wonderlands-x-showtime::before {
+    background-image: url(imagens/icons/wonderlands_x_showtime.svg);
+}
+
+.song-info-panel__head.unit-25ji-nightcord-de::before {
+    background-image: url(imagens/icons/25ji_nightcord_de.svg);
+}
+
+/* headers ordenação virtual singer */
+
+#sort-vs-hatsune-miku.sort-header {
+    background-color: #3cb;
+}
+
+#sort-vs-kagamine-rin.sort-header {
+    background-color: #fc1;
+    color: var(--text2);
+}
+
+#sort-vs-kagamine-len.sort-header {
+    background-color: #fe1;
+    color: var(--text2);
+}
+
+#sort-vs-megurine-luka.sort-header {
+    background-color: #fbc;
+    color: var(--text2);
+}
+
+#sort-vs-meiko.sort-header {
+    background-color: #d44;
+}
+
+#sort-vs-kaito.sort-header {
+    background-color: #36d;
 }
 
 /* Ichika Hoshino */
 
-#ichika,
-.ichika-hoshino h2,
-.ichika-hoshino .text-style {
-    color: #3ae;
+.ichika .song-modal__content {
+    background: linear-gradient(170deg, #3ae, rgb(125, 200, 244));
 }
 
-#ichika::after {
-    background:
-        linear-gradient(170deg,
-            rgb(51 170 238 / var(--song-gradient-opacity)),
-            rgb(21 111 163 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#ichika:hover::after {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.ichika-hoshino .song-modal__infoheader,
-.ichika-hoshino .seevideo {
-    background: linear-gradient(170deg, #33aaee, #156fa3);
-}
-
-.ichika-hoshino .song-modal__content {
-    scrollbar-color: #3ae #0c0c10;
-    scrollbar-width: thin;
-}
-
-.ichika-hoshino .song-modal__content::-webkit-scrollbar-thumb {
-    background: #3ae;
+#sort-default-ichika-hoshino.sort-header {
+    background-color: #3ae;
+    color: var(--text2);
 }
 
 /* Saki Tenma */
 
-#saki,
-.saki-tenma h2,
-.saki-tenma .text-style {
-    color: rgb(255, 221, 68);
+.saki .song-modal__content {
+    background: linear-gradient(170deg, #fd4, rgb(255, 235, 147));
 }
 
-#saki::after {
-    background:
-        linear-gradient(170deg,
-            rgb(255 221 68 / var(--song-gradient-opacity)),
-            rgb(238 196 7 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#saki:hover::after,
-.saki-tenma .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.saki-tenma .song-modal__infoheader,
-.saki-tenma .seevideo {
-    background: linear-gradient(170deg, #fd4, rgb(238, 196, 7));
-}
-
-.saki-tenma .song-modal__content {
-    scrollbar-color: #fd4 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.saki-tenma .song-modal__content::-webkit-scrollbar-thumb {
-    background: #fd4;
+#sort-default-saki-tenma.sort-header {
+    background-color: #fd4;
+    color: var(--text2);
 }
 
 /* Honami Mochizuki */
 
-#honami,
-.honami-mochizuki h2,
-.honami-mochizuki .text-style {
-    color: #e66;
+.honami .song-modal__content {
+    background: linear-gradient(170deg, #e66, rgb(238, 133, 133));
 }
 
-#honami::after {
-    background:
-        linear-gradient(170deg,
-            rgb(238 102 102 / var(--song-gradient-opacity)),
-            rgb(225 64 64 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#honami:hover::after,
-.honami-mochizuki .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-}
-
-.honami-mochizuki .song-modal__infoheader,
-.honami-mochizuki .seevideo {
-    background: linear-gradient(170deg, rgb(238, 102, 102), rgb(225, 64, 64));
-}
-
-.honami-mochizuki .song-modal__content {
-    scrollbar-color: #e66 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.honami-mochizuki .song-modal__content::-webkit-scrollbar-thumb {
-    background: #e66;
+#sort-default-honami-mochizuki.sort-header {
+    background-color: #e66;
 }
 
 /* Shiho Hinomori */
 
-#shiho,
-.shiho-hinomori h2,
-.shiho-hinomori .text-style {
-    color: #bbde22;
+.shiho .song-modal__content {
+    background: linear-gradient(170deg, #bd2, #d7f160);
 }
 
-#shiho::after {
-    background:
-        linear-gradient(170deg,
-            rgb(187 222 34 / var(--song-gradient-opacity)),
-            rgb(177 216 2 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#shiho:hover::after,
-.shiho-hinomori .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.shiho-hinomori .song-modal__infoheader,
-.shiho-hinomori .seevideo {
-    background: linear-gradient(170deg, rgb(187, 222, 34), rgb(177, 216, 2));
-}
-
-.shiho-hinomori .song-modal__content {
-    scrollbar-color: #bbde22 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.shiho-hinomori .song-modal__content::-webkit-scrollbar-thumb {
-    background: #bbde22;
+#sort-default-shiho-hinomori.sort-header {
+    background-color: #bd2;
+    color: var(--text2);
 }
 
 /* Minori Hanasato */
 
-#minori,
-.minori-hanasato h2,
-.minori-hanasato .text-style {
-    color: #ffcdac;
+.minori .song-modal__content {
+    background: linear-gradient(170deg, #ffcdac, #ffb17d);
 }
 
-#minori::after {
-    background:
-        linear-gradient(170deg,
-            rgb(255 205 172 / var(--song-gradient-opacity)),
-            rgb(255 175 122 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#minori:hover::after,
-.minori-hanasato .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.minori-hanasato .song-modal__infoheader,
-.minori-hanasato .seevideo {
-    background: linear-gradient(170deg, #ffcdac, #ffaf7a);
-}
-
-.minori-hanasato .song-modal__content {
-    scrollbar-color: #ffcdac #0c0c10;
-    scrollbar-width: thin;
-}
-
-.minori-hanasato .song-modal__content::-webkit-scrollbar-thumb {
-    background: #ffcdac;
+#sort-default-minori-hanasato.sort-header {
+    background-color: #ffcdac;
+    color: var(--text2);
 }
 
 /* Haruka Kiritani */
 
-#haruka,
-.haruka-kiritani h2,
-.haruka-kiritani .text-style {
-    color: #9cf;
+.haruka .song-modal__content {
+    background: linear-gradient(170deg, #9cf, rgb(97, 176, 255));
 }
 
-#haruka::after {
-    background:
-        linear-gradient(170deg,
-            rgb(153 204 255 / var(--song-gradient-opacity)),
-            rgb(111 183 255 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#haruka:hover::after,
-.haruka-kiritani .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.haruka-kiritani .song-modal__infoheader,
-.haruka-kiritani .seevideo {
-    background: linear-gradient(170deg, #99ccff, rgb(111, 183, 255));
-}
-
-.haruka-kiritani .song-modal__content {
-    scrollbar-color: #9cf #0c0c10;
-    scrollbar-width: thin;
-}
-
-.haruka-kiritani .song-modal__content::-webkit-scrollbar-thumb {
-    background: #9cf;
+#sort-default-haruka-kiritani.sort-header {
+    background-color: #9cf;
+    color: var(--text2);
 }
 
 /* Airi Momoi */
 
-#airi,
-.airi-momoi h2,
-.airi-momoi .text-style {
-    color: #fac;
+.airi .song-modal__content {
+    background: linear-gradient(170deg, #fac, rgb(255, 127, 178));
 }
 
-#airi::after {
-    background:
-        linear-gradient(170deg,
-            rgb(255 170 204 / var(--song-gradient-opacity)),
-            rgb(255 126 177 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#airi:hover::after,
-.airi-momoi .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.airi-momoi .song-modal__infoheader,
-.airi-momoi .seevideo {
-    background: linear-gradient(170deg, #fac, rgb(255, 126, 177));
-}
-
-.airi-momoi .song-modal__content {
-    scrollbar-color: #fac #0c0c10;
-    scrollbar-width: thin;
-}
-
-.airi-momoi .song-modal__content::-webkit-scrollbar-thumb {
-    background: #fac;
+#sort-default-airi-momoi.sort-header {
+    background-color: #fac;
+    color: var(--text2);
 }
 
 /* Shizuku Hinomori */
 
-#shizuku,
-.shizuku-hinomori h2,
-.shizuku-hinomori .text-style {
-    color: #9ed;
+.shizuku .song-modal__content {
+    background: linear-gradient(170deg, #9ed, rgb(119, 235, 212));
 }
 
-#shizuku::after {
-    background:
-        linear-gradient(170deg,
-            rgb(153 238 221 / var(--song-gradient-opacity)),
-            rgb(84 235 205 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#shizuku:hover::after,
-.shizuku-hinomori .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.shizuku-hinomori .song-modal__infoheader,
-.shizuku-hinomori .seevideo {
-    background: linear-gradient(170deg, #9ed, rgb(84, 235, 205));
-}
-
-.shizuku-hinomori .song-modal__content {
-    scrollbar-color: #9ed #0c0c10;
-    scrollbar-width: thin;
-}
-
-.shizuku-hinomori .song-modal__content::-webkit-scrollbar-thumb {
-    background: #9ed;
+#sort-default-shizuku-hinomori.sort-header {
+    background-color: #9ed;
+    color: var(--text2);
 }
 
 /* Kohane Azusawa */
 
-#kohane,
-.kohane-azusawa h2,
-.kohane-azusawa .text-style {
-    color: #ff679a;
+.kohane .song-modal__content {
+    background: linear-gradient(170deg, #ff679a, #ff8cb3);
 }
 
-#kohane::after {
-    background:
-        linear-gradient(170deg,
-            rgb(255 103 154 / var(--song-gradient-opacity)),
-            rgb(255 76 136 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#kohane:hover::after,
-.kohane-azusawa .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.kohane-azusawa .song-modal__infoheader,
-.kohane-azusawa .seevideo {
-    background: linear-gradient(170deg, rgb(255, 103, 154), rgb(255, 76, 136));
-}
-
-.kohane-azusawa .song-modal__content {
-    scrollbar-color: #ff679a #0c0c10;
-    scrollbar-width: thin;
-}
-
-.kohane-azusawa .song-modal__content::-webkit-scrollbar-thumb {
-    background: #ff679a;
+#sort-default-kohane-azusawa.sort-header {
+    background-color: #ff679a;
 }
 
 /* An Shiraishi */
 
-#an,
-.an-shiraishi h2,
-.an-shiraishi .text-style {
-    color: #0bd;
+.an .song-modal__content {
+    background: linear-gradient(170deg, #0bd, rgb(82, 217, 241));
 }
 
-#an::after {
-    background:
-        linear-gradient(170deg,
-            rgb(0 187 221 / var(--song-gradient-opacity)),
-            rgb(0 136 160 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#an:hover::after,
-.an-shiraishi .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.an-shiraishi .song-modal__infoheader,
-.an-shiraishi .seevideo {
-    background: linear-gradient(170deg, rgb(0, 187, 221), rgb(0, 136, 160));
-}
-
-.an-shiraishi .song-modal__content {
-    scrollbar-color: #0bd #0c0c10;
-    scrollbar-width: thin;
-}
-
-.an-shiraishi .song-modal__content::-webkit-scrollbar-thumb {
-    background: #0bd;
+#sort-default-an-shiraishi.sort-header {
+    background-color: #0bd;
 }
 
 /* Akito Shinonome */
 
-#akito,
-.akito-shinonome h2,
-.akito-shinonome .text-style {
-    color: #f72;
+.akito .song-modal__content {
+    background: linear-gradient(170deg, #f72, rgb(255, 149, 83));
 }
 
-#akito::after {
-    background:
-        linear-gradient(170deg,
-            rgb(255 119 34 / var(--song-gradient-opacity)),
-            rgb(255 102 7 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#akito:hover::after,
-.akito-shinonome .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.akito-shinonome .song-modal__infoheader,
-.akito-shinonome .seevideo {
-    background: linear-gradient(170deg, rgb(255, 119, 34), rgb(255, 102, 7));
-}
-
-.akito-shinonome .song-modal__content {
-    scrollbar-color: #f72 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.akito-shinonome .song-modal__content::-webkit-scrollbar-thumb {
-    background: #f72;
+#sort-default-akito-shinonome.sort-header {
+    background-color: #f72;
 }
 
 /* Toya Aoyagi */
 
-#toya,
-.toya-aoyagi h2,
-.toya-aoyagi .text-style {
-    color: #07d;
+.toya .song-modal__content {
+    background: linear-gradient(170deg, #07d, rgb(55, 154, 241));
 }
 
-#toya::after {
-    background:
-        linear-gradient(170deg,
-            rgb(0 119 221 / var(--song-gradient-opacity)),
-            rgb(0 79 148 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#toya:hover::after,
-.toya-aoyagi .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-}
-
-.toya-aoyagi .song-modal__infoheader,
-.toya-aoyagi .seevideo {
-    background: linear-gradient(170deg, rgb(0, 119, 221), rgb(0, 79, 148));
-}
-
-.toya-aoyagi .song-modal__content {
-    scrollbar-color: #07d #0c0c10;
-    scrollbar-width: thin;
-}
-
-.toya-aoyagi .song-modal__content::-webkit-scrollbar-thumb {
-    background: #07d;
+#sort-default-toya-aoyagi.sort-header {
+    background-color: #07d;
 }
 
 /* Tsukasa Tenma */
-#tsukasa,
-.tsukasa-tenma h2,
-.tsukasa-tenma .text-style {
-    color: #fb0;
+
+.tsukasa .song-modal__content {
+    background: linear-gradient(170deg, #fb0, rgb(255, 203, 60));
 }
 
-#tsukasa::after {
-    background:
-        linear-gradient(170deg,
-            rgb(255 187 0 / var(--song-gradient-opacity)),
-            rgb(184 135 0 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#tsukasa:hover::after,
-.tsukasa-tenma .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.tsukasa-tenma .song-modal__infoheader,
-.tsukasa-tenma .seevideo {
-    background: linear-gradient(170deg, rgb(255, 187, 0), rgb(184, 135, 0));
-}
-
-.tsukasa-tenma .song-modal__content {
-    scrollbar-color: #fb0 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.tsukasa-tenma .song-modal__content::-webkit-scrollbar-thumb {
-    background: #fb0;
+#sort-default-tsukasa-tenma.sort-header {
+    background-color: #fb0;
+    color: var(--text2);
 }
 
 /* Emu Otori */
-#emu,
-.emu-otori h2,
-.emu-otori .text-style {
-    color: #f6b;
+
+.emu .song-modal__content {
+    background: linear-gradient(170deg, #f6b, rgb(255, 136, 201));
 }
 
-#emu::after {
-    background:
-        linear-gradient(170deg,
-            rgb(255 102 187 / var(--song-gradient-opacity)),
-            rgb(255 59 167 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#emu:hover::after,
-.emu-otori .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.emu-otori .song-modal__infoheader,
-.emu-otori .seevideo {
-    background: linear-gradient(170deg, rgb(255, 102, 187), rgb(255, 59, 167));
-}
-
-.emu-otori .song-modal__content {
-    scrollbar-color: #f6b #0c0c10;
-    scrollbar-width: thin;
-}
-
-.emu-otori .song-modal__content::-webkit-scrollbar-thumb {
-    background: #f6b;
+#sort-default-emu-otori.sort-header {
+    background-color: #f6b;
 }
 
 /* Nene Kusanagi */
-#nene,
-.nene-kusanagi h2,
-.nene-kusanagi .text-style {
-    color: #3d9;
+
+.nene .song-modal__content {
+    background: linear-gradient(170deg, #3d9, rgb(101, 234, 181));
 }
 
-#nene::after {
-    background:
-        linear-gradient(170deg,
-            rgb(51 221 153 / var(--song-gradient-opacity)),
-            rgb(5 218 133 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#nene:hover::after,
-.nene-kusanagi .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.nene-kusanagi .song-modal__infoheader,
-.nene-kusanagi .seevideo {
-    background: linear-gradient(170deg, rgb(51, 221, 153), rgb(5, 218, 133));
-}
-
-.nene-kusanagi .song-modal__content {
-    scrollbar-color: #3d9 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.nene-kusanagi .song-modal__content::-webkit-scrollbar-thumb {
-    background: #3d9;
+#sort-default-nene-kusanagi.sort-header {
+    background-color: #3d9;
+    color: var(--text2);
 }
 
 /* Rui Kamishiro */
-#rui,
-.rui-kamishiro h2,
-.rui-kamishiro .text-style {
-    color: #b8e;
+
+.rui .song-modal__content {
+    background: linear-gradient(170deg, #b8e, rgb(200, 162, 237));
 }
 
-#rui::after {
-    background:
-        linear-gradient(170deg,
-            rgb(187 136 238 / var(--song-gradient-opacity)),
-            rgb(163 94 232 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#rui:hover::after,
-.rui-kamishiro .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.rui-kamishiro .song-modal__infoheader,
-.rui-kamishiro .seevideo {
-    background: linear-gradient(170deg, rgb(187, 136, 238), rgb(163, 94, 232));
-}
-
-.rui-kamishiro .song-modal__content {
-    scrollbar-color: #b8e #0c0c10;
-    scrollbar-width: thin;
-}
-
-.rui-kamishiro .song-modal__content::-webkit-scrollbar-thumb {
-    background: #b8e;
+#sort-default-rui-kamishiro.sort-header {
+    background-color: #b8e;
+    color: var(--text2);
 }
 
 /* Kanade Yoisaki */
-#kanade,
-.kanade-yoisaki h2,
-.kanade-yoisaki .text-style {
-    color: #b68;
+
+.kanade .song-modal__content {
+    background: linear-gradient(170deg, #b68, rgb(147, 58, 93));
+    color: var(--text);
 }
 
-#kanade::after {
-    background:
-        linear-gradient(170deg,
-            rgb(187 102 136 / var(--song-gradient-opacity)),
-            rgb(187 66 115 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#kanade:hover::after,
-.kanade-yoisaki .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.kanade-yoisaki .song-modal__infoheader,
-.kanade-yoisaki .seevideo {
-    background: linear-gradient(170deg, rgb(187, 102, 136), rgb(187, 66, 115));
-}
-
-.kanade-yoisaki .song-modal__content {
-    scrollbar-color: #b68 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.kanade-yoisaki .song-modal__content::-webkit-scrollbar-thumb {
-    background: #b68;
+#sort-default-kanade-yoisaki.sort-header {
+    background-color: #b68;
 }
 
 /* Mafuyu Asahina */
-#mafuyu,
-.mafuyu-asahina h2,
-.mafuyu-asahina .text-style {
-    color: #88c;
+
+.mafuyu .song-modal__content {
+    background: linear-gradient(170deg, #88c, rgb(93, 93, 184));
 }
 
-#mafuyu::after {
-    background:
-        linear-gradient(170deg,
-            rgb(136 136 204 / var(--song-gradient-opacity)),
-            rgb(99 99 202 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#mafuyu:hover::after,
-.mafuyu-asahina .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.mafuyu-asahina .song-modal__infoheader,
-.mafuyu-asahina .seevideo {
-    background: linear-gradient(170deg, rgb(136, 136, 204), rgb(99, 99, 202));
-}
-
-.mafuyu-asahina .song-modal__content {
-    scrollbar-color: #88c #0c0c10;
-    scrollbar-width: thin;
-}
-
-.mafuyu-asahina .song-modal__content::-webkit-scrollbar-thumb {
-    background: #88c;
+#sort-default-mafuyu-asahina.sort-header {
+    background-color: #88c;
 }
 
 /* Ena Shinonome */
-#ena,
-.ena-shinonome h2,
-.ena-shinonome .text-style {
-    color: #ca8;
+
+.ena .song-modal__content {
+    background: linear-gradient(170deg, #ca8, rgb(196, 134, 71));
 }
 
-#ena::after {
-    background:
-        linear-gradient(170deg,
-            rgb(204 170 136 / var(--song-gradient-opacity)),
-            rgb(203 152 100 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#ena:hover::after,
-.ena-shinonome .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.ena-shinonome .song-modal__infoheader,
-.ena-shinonome .seevideo {
-    background: linear-gradient(170deg, rgb(204, 170, 136), rgb(203, 152, 100));
-}
-
-.ena-shinonome .song-modal__content {
-    scrollbar-color: #ca8 #0c0c10;
-    scrollbar-width: thin;
-}
-
-.ena-shinonome .song-modal__content::-webkit-scrollbar-thumb {
-    background: #ca8;
+#sort-default-ena-shinonome.sort-header {
+    background-color: #ca8;
+    color: var(--text2);
 }
 
 /* Mizuki Akiyama */
-#mizuki,
-.mizuki-akiyama h2,
-.mizuki-akiyama .text-style {
-    color: #e4a8ca;
+
+.mizuki .song-modal__content {
+    background: linear-gradient(170deg, #e4a8ca, #cf75a8);
 }
 
-#mizuki::after {
-    background:
-        linear-gradient(170deg,
-            rgb(228 168 202 / var(--song-gradient-opacity)),
-            rgb(221 111 173 / var(--song-gradient-opacity))),
-        var(--bg2);
-}
-
-#mizuki:hover::after,
-.mizuki-akiyama .song-modal__infoheader {
-    --song-gradient-opacity: 1;
-    color: #0c0c0c;
-}
-
-.mizuki-akiyama .song-modal__infoheader,
-.mizuki-akiyama .seevideo {
-    background: linear-gradient(170deg, rgb(228, 168, 202), rgb(221, 111, 173));
-}
-
-.mizuki-akiyama .song-modal__content {
-    scrollbar-color: #e4a8ca #0c0c10;
-    scrollbar-width: thin;
-}
-
-.mizuki-akiyama .song-modal__content::-webkit-scrollbar-thumb {
-    background: #e4a8ca;
+#sort-default-mizuki-akiyama.sort-header {
+    background-color: #e4a8ca;
+    color: var(--text2);
 }

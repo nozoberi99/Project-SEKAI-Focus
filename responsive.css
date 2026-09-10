@@ -10,9 +10,82 @@
     max-width: 100%;
 }
 
+@media (max-width: 1100px) {
+    main {
+        margin: 120px 24px 0 90px;
+    }
+
+    .top-actions-left {
+        left: 90px;
+        right: 24px;
+        gap: 16px;
+    }
+
+    .top-actions-right {
+        right: 24px;
+    }
+
+    #name-input {
+        width: min(100%, 360px);
+    }
+
+    .song-info-section {
+        width: min(740px, calc(100vw - 120px));
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding: 16px 10px;
+    }
+
+    main {
+        margin: 112px 10px 0 62px;
+    }
+
+    .top-actions-left {
+        left: 62px;
+        right: 10px;
+        gap: 8px;
+    }
+
+    .top-actions-right {
+        top: 70px;
+        right: 10px;
+    }
+
+    #search-section {
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    #name-input {
+        width: 100%;
+        max-width: none;
+    }
+
+    #change-list {
+        flex: 0 0 auto;
+        min-width: 0;
+        padding-inline: 10px;
+    }
+
+    .unit-filter {
+        left: 8px;
+        top: 30%;
+        margin: 0;
+        gap: 12px;
+        padding: 18px 4px;
+        transform: translateY(-50%);
+    }
+
+    .unit-button img {
+        width: 30px;
+    }
+
+    .filters-dropdown {
+        width: calc(100vw - 20px);
+        max-height: 88dvh;
     }
 
     h1 {
@@ -20,90 +93,123 @@
         line-height: 1;
     }
 
-    .focus-songs {
+    .focus-songs.list-view,
+    .focus-songs.cover-view {
         gap: 6px;
         margin: 0;
         padding: 0;
     }
 
-    .song-modal {
-        padding: 50px;
+    body.modal-open main {
+        padding-bottom: calc(min(420px, 45dvh) + 24px);
     }
 
-    .song-modal__content {
-        width: 100%;
-        max-height: 96vh;
+    body .song-modal {
+        position: fixed;
+        top: auto;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        width: auto;
+        max-height: min(420px, 45dvh);
+        margin: 0;
+        z-index: 2;
     }
 
-    .song-modal__game-img {
-        width: calc(100% - 40px);
-        margin: 12px;
-        top: 32vw;
-        gap: 18px;
-        align-items: flex-end;
+    body .song-modal__content {
+        height: min(420px, 45dvh);
+        max-height: inherit;
+        overflow-x: clip;
+        overflow-y: auto;
     }
 
-    .song-modal__cover {
-        width: clamp(70px, 18vw, 120px);
-        height: auto;
-    }
-
-    .song-modal__event {
-        width: min(38%, 220px);
-        height: auto;
+    body .song-modal__select-button {
+        position: fixed;
+        width: auto;
         margin-top: 0;
+        right: 420px;
+        left: 50%;
     }
 
-    .song-modal__details {
-        margin: 36px 12px;
+    body .song-modal__game-img {
+        margin: 30px 16px 8px;
     }
 
-    .song-modal h2 {
+    body .song-modal__cover {
+        width: 50%;
+    }
+
+    body .song-modal__details {
+        margin: 8px 16px 18px;
+    }
+
+    body .song-modal h2 {
         font-size: 55px;
         line-height: 0.8;
         margin-top: 10px;
     }
 
-    .song-modal__infoheader {
-        width: 35%;
-        font-size: clamp(1rem, 4vw, 1.5rem);
-    }
-
-    .song-modal__infodata {
-        font-size: clamp(1rem, 4vw, 1.25rem);
-        overflow-wrap: anywhere;
-    }
-
-    .song-modal__description {
+    body .song-modal__description {
         font-size: clamp(1.15rem, 4.5vw, 1.5rem);
         line-height: 0.8;
     }
 
-    .modal-song-title {
+    body .modal-song-title {
         font-size: clamp(2rem, 8vw, 3.75rem);
     }
 
-    .video-selector {
+    .song-info-section {
+        width: calc(100vw - 72px);
+        margin: 12px 0 0;
+        max-width: 100%;
+    }
+
+    .song-info-panel {
+        min-height: 0;
+    }
+
+    .song-info-panel__card-tabs {
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .song-info-panel__head {
+        align-items: flex-start;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 12px;
     }
 
-    .seevideo {
-        font-size: clamp(1.25rem, 5vw, 1.875rem);
-        padding: 0 10px;
-        margin-bottom: 4px;
+    .song-info-panel__char-name {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        font-size: clamp(2.2rem, 10vw, 3.25rem);
+        line-height: 1;
     }
 
-    .video-frame {
-        width: 100%;
+    .song-info-panel__card-content {
+        margin-left: 0;
+        padding-inline: 42px;
+        overflow: visible;
+    }
+
+    .song-info-panel__member-slots {
+        max-width: 100%;
+    }
+
+    .song-info-panel__card-img {
+        max-width: 100%;
         height: auto;
-        aspect-ratio: 16 / 9;
     }
 
-    .video {
-        width: 100%;
-        height: 100%;
+    .song-info-panel__card-nav--previous {
+        left: -8px;
     }
+
+    .song-info-panel__card-nav--next {
+        right: -8px;
+    }
+
 }
 
 @media (max-width: 420px) {
@@ -112,36 +218,50 @@
     }
 
     .song {
-        height: 163px;
-        width: 290px;
+        min-height: 78px;
+        width: 100%;
     }
 
     .song::after {
         padding: 7px 2px 5px;
     }
 
+    .song-mv-icons {
+        right: 7px;
+        bottom: 6px;
+        gap: 2px;
+    }
+
+    .song-mv-icon {
+        min-width: 21px;
+        height: 16px;
+        padding: 0 3px;
+        font-size: 0.75rem;
+    }
+
     .song img {
-        object-position: 50% 50% !important;
-        transform: unset !important;
+        flex-basis: 62px;
+        width: 62px;
+        height: 62px;
     }
 
-    .song-modal__content {
-        width: 130%;
+    .song-info {
+        padding: 0 10px;
     }
 
-    .song-modal__image {
-        min-height: 180px;
+    .song-info strong {
+        font-size: 1.3rem;
     }
 
-    .song-modal__game-img {
-        top: 27vw;
+    .song-info span {
+        font-size: 0.95rem;
     }
 
-    .song-modal__details {
+    body .song-modal__details {
         margin: 18px 12px;
     }
 
-    .song-modal h2 {
+    body .song-modal h2 {
         font-size: 35px;
         margin-bottom: 10px;
         line-height: 0.8;
@@ -149,13 +269,63 @@
         letter-spacing: 0.03em;
     }
 
-    .song-modal__infoheader {
-        width: 90px;
-    }
-
     .song-modal__comment,
-    .song-modal__author,
-    .song-modal__description-text {
+    .song-modal__author {
         margin-inline: 2px;
     }
+
+    .top-actions-left {
+        align-items: stretch;
+    }
+
+    #change-list .change-list__style {
+        display: none;
+    }
+
+    #change-list {
+        min-width: 38px;
+        padding-inline: 8px;
+    }
+
+    .song-info-panel__topbar {
+        gap: 6px;
+    }
+
+    .song-info-panel__back-button {
+        position: relative;
+        left: 0;
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .song-info-panel__card-tabs {
+        height: auto;
+        min-height: 40px;
+    }
+
+    .song-info-panel__tab {
+        min-width: 0;
+        padding-inline: 2px;
+        font-size: 20px;
+    }
+
+    .song-info-panel__head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .song-info-panel__head>div {
+        width: 100%;
+        margin-left: 0;
+        gap: 1px;
+        justify-content: space-between;
+    }
+
+    .song-info-panel__char-name {
+        font-size: clamp(2rem, 12vw, 3.25rem);
+        line-height: 0.9;
+        overflow-wrap: anywhere;
+    }
+
 }

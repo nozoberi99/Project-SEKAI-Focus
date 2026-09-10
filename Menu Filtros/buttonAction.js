@@ -1,53 +1,18 @@
-import { atualizarVisibilidadeMusicas, filtrarPersonagens } from './procurarNome.js';
+import { filtrarPersonagens } from './procurarNome.js';
 import { updateResultsState } from './estadoResultados.js';
 import { applyRollFilter } from './filtroRoll.js';
 import { applyVirtualSingerFilter } from './filtroVirtualSinger.js';
+import { applyCharacterFilter } from './filtroPersonagem.js';
 import { applyEventFilter } from './filtroEvento.js';
 import { applyMvFilter } from './filtroMv.js';
 
-export function applyFranchiseFilter() {
-    const selectedCharacters = Array.from(document.querySelectorAll('.multiOpcao-child input[type="checkbox"], .multiOpcao-parent-checkbox'))
-        .filter((checkbox) => checkbox.checked)
-        .flatMap((checkbox) => [
-            checkbox.dataset.sectionId,
-            checkbox.dataset.sectionClass,
-            checkbox.dataset.label,
-            checkbox.value,
-            checkbox.closest('.multiOpcao-parent')?.querySelector('span')?.textContent
-        ])
-        .filter(Boolean)
-        .map((value) => value.trim().toLowerCase());
+function updateFilterButtonState() {
+    const hasAppliedFilter = [
+        ...document.querySelectorAll('.char-selection.selected:not(#char-no-select), .vsing-selection.selected:not(#vsing-no-select), .roll-selection.selected:not(#roll-no-select), .event-selection.selected:not(#event-no-select), .mv-selection.selected:not(#mv-no-select)')
+    ].length > 0
+        || document.querySelectorAll('.unit-button.selected').length > 0;
 
-    const sections = document.querySelectorAll('.character-focus');
-
-    document.querySelectorAll('.song').forEach((song) => {
-        const selected = selectedCharacters.length === 0 || selectedCharacters.some((character) =>
-            [song.dataset.filterUnit, song.dataset.filterUnitKey, song.dataset.filterCharacter]
-                .filter(Boolean)
-                .map((value) => value.trim().toLowerCase())
-                .includes(character)
-        );
-        song.dataset.franchiseMatch = String(selected);
-    });
-
-    sections.forEach((section) => {
-        const characterId = section.querySelector('.character-name')?.id;
-        const matchesCharacter = selectedCharacters.length === 0
-            || selectedCharacters.some((character) => section.classList.contains(character) || characterId?.toLowerCase() === character);
-        const matchesUnit = selectedCharacters.length === 0
-            || selectedCharacters.includes(section.dataset.unit?.trim().toLowerCase());
-
-        section.querySelectorAll('.song').forEach((song) => {
-            song.dataset.franchiseMatch = String(matchesCharacter || matchesUnit);
-        });
-
-        const shouldShow = selectedCharacters.length === 0 || matchesCharacter || matchesUnit;
-        section.hidden = !shouldShow;
-        section.style.display = shouldShow ? '' : 'none';
-    });
-
-    atualizarVisibilidadeMusicas();
-
+    document.getElementById('filter-button')?.classList.toggle('filters-applied', hasAppliedFilter);
 }
 
 export function applySearchAction(callback) {
@@ -61,10 +26,11 @@ export function applySearchAction(callback) {
 
     applyRollFilter();
     applyVirtualSingerFilter();
+    applyCharacterFilter();
     applyEventFilter();
     applyMvFilter();
-    applyFranchiseFilter();
     updateResultsState();
+    updateFilterButtonState();
 }
 
 export function initSearchButtonBehavior(searchButton, callback) {
@@ -79,3 +45,12 @@ export function initSearchButtonBehavior(searchButton, callback) {
 }
 
 initSearchButtonBehavior(document.getElementById('search-button'), filtrarPersonagens);
+
+document.getElementById('name-input')?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter') {
+        return;
+    }
+
+    event.preventDefault();
+    applySearchAction(filtrarPersonagens);
+});
